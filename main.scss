@@ -1,0 +1,60 @@
+/**
+ * https://github.com/jlong/css-spinners
+ */
+.spinner-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  opacity: 0.85;
+
+  &.show {
+    display: flex;
+  }
+}
+
+.list-item-details {
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  #collapse-details-pane {
+    background-color: #30e5d0;
+    color: #274b47;
+
+    .mi {
+      transition: transform 0.4s;
+    }
+
+    &.expanded {
+      background-color: #274b47;
+      color: #30e5d0;
+
+      .mi {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  #mygrid-details {
+    width: 1000px;
+    background-color: #fff;
+    overflow: hidden;
+    height: 0;
+    max-height: 700px;
+    overflow-y: auto;
+  }
+
+  &.loading {
+    .spinner-wrapper {
+      display: flex;
+    }
+  }
+}
